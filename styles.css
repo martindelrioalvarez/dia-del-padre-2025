@@ -30,6 +30,17 @@ img {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* ✨ Nuevo estilo para el mensaje "Feliz Día del Padre" */
+.message p {
+    font-size: 40px;
+    font-weight: bold;
+    background: linear-gradient(to right, #4CAF50, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
 button {
     font-size: 20px;
     padding: 12px 24px;
