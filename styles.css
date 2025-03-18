@@ -78,3 +78,13 @@ button:hover {
     margin-top: 10px;
     color: #333;
 }
+
+.caption strong {
+    color: #E44D26; /* Rojo fuerte para destacar comentarios especiales */
+}
+
+.caption em {
+    color: #555; /* Gris oscuro para comentarios de rangos */
+    font-style: italic;
+}
+
