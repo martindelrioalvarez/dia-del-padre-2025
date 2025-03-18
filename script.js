@@ -1,8 +1,8 @@
 // Genera automáticamente imágenes desde "img/imagen1.jpg" hasta "img/imagen100.jpg"
 const images = [];
 const captions = [];
-const specialComments = {}; // Aquí guardamos comentarios para imágenes específicas
-const rangeComments = {}; // Aquí guardamos comentarios para rangos de imágenes
+const specialComments = {}; // Comentarios para imágenes específicas
+const rangeComments = {}; // Comentarios para rangos de imágenes
 
 for (let i = 1; i <= 125; i++) {
     images.push(`img/imagen${i}.jpg`);
@@ -17,20 +17,16 @@ rangeComments["60-70"] = "📖 Un capítulo lleno de recuerdos hermosos entre no
 
 // Función para obtener el comentario especial o por rango
 function getComment(index) {
-    // Si la imagen tiene un comentario especial, lo mostramos
     if (specialComments[index]) {
         return `<strong>${specialComments[index]}</strong>`;
     }
-
-    // Si la imagen pertenece a un rango con comentario especial, lo mostramos
     for (const range in rangeComments) {
         const [start, end] = range.split("-").map(Number);
         if (index >= start && index <= end) {
             return `<em>${rangeComments[range]}</em>`;
         }
     }
-
-    return ""; // Si no hay comentario especial, no mostramos nada extra
+    return "";
 }
 
 let currentImageIndex = 0;
@@ -48,11 +44,15 @@ function startSlideshow() {
 function showImage(index) {
     const imageElement = document.getElementById("image");
     const captionElement = document.getElementById("caption");
+    const nextButton = document.getElementById("nextButton"); // Referencia al botón "Siguiente"
 
-    const comment = getComment(index + 1); // Sumar 1 porque los índices empiezan en 0
+    const comment = getComment(index + 1); // Ajustamos el índice (sumamos 1)
 
     imageElement.src = images[index];  
-    captionElement.innerHTML = `${captions[index]}<br>${comment}`; // Mostrar pie de foto + comentario especial si lo hay
+    captionElement.innerHTML = `${captions[index]}<br>${comment}`; // Mostramos la descripción y el comentario
+
+    // 🔹 Hacemos que el botón "Siguiente" se vea después de que la imagen se muestra
+    nextButton.style.display = "block";
 }
 
 function nextImage() {
