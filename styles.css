@@ -70,7 +70,7 @@ button:hover {
 .next-button {
     font-size: 18px;
     padding: 10px 20px;
-    background-color: #007BFF;
+    background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
@@ -106,11 +106,41 @@ button:hover {
 
 .caption strong {
     color: #E44D26; /* Rojo fuerte para destacar comentarios especiales */
-    font: bold;
 }
 
 .caption em {
     color: #E44D26; /* Rojo fuerte para destacar comentarios especiales */
-    font: bold;
 }
 
+.final-message {
+    text-align: center;
+    font-size: 22px;
+    color: #333;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.final-message h2 {
+    color: #007BFF;
+}
+
+.final-message p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* 🔄 Estilos para el botón de reinicio */
+#restartButton {
+    font-size: 20px;
+    padding: 12px 24px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+#restartButton:hover {
+    background-color: #218838;
+}
