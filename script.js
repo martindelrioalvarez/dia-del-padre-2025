@@ -1,14 +1,11 @@
-const images = [
-    "img/img1.jpeg",
-    "img/img2.jpeg",
-    "img/img3.jpeg"
-];
+// Genera automáticamente una lista de 100 imágenes desde "img/imagen1.jpg" hasta "img/imagen100.jpg"
+const images = [];
+const captions = [];
 
-const captions = [
-    "Gracias por siempre estar a mi lado. ❤️",
-    "Tus enseñanzas son mi mayor tesoro. 👨‍👦",
-    "Eres el mejor padre del mundo. 🌍✨"
-];
+for (let i = 1; i <= 100; i++) {
+    images.push(`img/imagen${i}.jpg`);
+    captions.push(`Foto especial #${i} para papá ❤️`);
+}
 
 let currentImageIndex = 0;
 
