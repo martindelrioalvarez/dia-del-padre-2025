@@ -6,14 +6,47 @@ const rangeComments = {}; // Comentarios para rangos de imágenes
 
 for (let i = 1; i <= 125; i++) {
     images.push(`img/imagen${i}.jpg`);
-    captions.push(`Foto especial #${i} para papá ❤️`);
+    captions.push(`Foto especial #${i} para papuchi ❤️`);
 }
 
-// 🔹 Comentario especial para la imagen 57
-specialComments[57] = "⭐ Esta imagen es muy especial para nosotros. ¡Momentos inolvidables!";
+// Esquiar
+specialComments[4] = "⛷️ ESQUÍ 🎿";
+specialComments[12] = "⛷️ ESQUÍ 🎿";
+rangeComments["19-24"] = "⛷️ ESQUÍ 🎿";
+rangeComments["26-27"] = "⛷️ ESQUÍ 🎿";
+rangeComments["43-44"] = "⛷️ ESQUÍ 🎿";
+rangeComments["46-48"] = "⛷️ ESQUÍ 🎿";
+specialComments[89] = "⛷️ ESQUÍ 🎿";
+specialComments[90] = "⛷️ ESQUÍ y GEOCACHING 🔎";
+rangeComments["91-93"] = "⛷️ ESQUÍ 🎿";
+specialComments[104] = "⛷️ ESQUÍ 🎿";
 
-// 🔹 Comentario especial para el rango 60 - 70
-rangeComments["60-70"] = "📖 Un capítulo lleno de recuerdos hermosos entre nosotros.";
+// Granada
+specialComments[5] = "📍 GRANADA";
+
+// Madrid
+specialComments[7] = "📍 MADRID";
+
+specialComments[11] = "🥐 Nunca es mal momento para una buena napolitana de chocolate 🍫";
+specialComments[88] = "🥐 Lo dicho, nunca es mal momento para una buena napolitana de chocolate 🍫";
+
+// Londres
+specialComments[25] = "🎡 LONDON 💂🏼‍♂️";
+rangeComments["28-41"] = "🎡 LONDON 💂🏼‍♂️";
+
+// Bicicleta
+specialComments[42] = "🚵‍♀️ BICI 🚲";
+specialComments[45] = "🚵‍♀️ BICI 🚲";
+specialComments[51] = "🚵‍♀️ BICI 🚲";
+
+specialComments[49] = "Plato 7 con arroz y un mediterráneo";
+
+specialComments[60] = "🚵‍♀️ La Vuelta en Ourense 🚲";
+
+// Geocaching
+rangeComments["53-59"] = "🔎 GEOCACHING 📦";
+rangeComments["61-68"] = "🔎 GEOCACHING 📦";
+specialComments[95] = "🔎 GEOCACHING 📦";
 
 // Función para obtener el comentario especial o por rango
 function getComment(index) {
@@ -33,6 +66,7 @@ let currentImageIndex = 0;
 
 document.getElementById("startButton").addEventListener("click", startSlideshow);
 document.getElementById("nextButton").addEventListener("click", nextImage);
+// document.getElementById("prevButton").addEventListener("click", prevImage);
 
 function startSlideshow() {
     document.querySelector(".message").style.display = "none";
@@ -50,6 +84,7 @@ function showImage(index) {
     imageElement.classList.remove("show");
     captionElement.classList.remove("show");
     nextButton.classList.remove("show");
+    // prevButton.classList.remove("show");
 
     // Esperar un poco antes de cambiar la imagen (para que la animación fluya mejor)
     setTimeout(() => {
@@ -62,6 +97,7 @@ function showImage(index) {
         imageElement.classList.add("show");
         captionElement.classList.add("show");
         nextButton.classList.add("show");
+        // prevButton.classList.add("show");
     }, 300); // Pequeña pausa para la animación de salida antes de la nueva imagen
 }
 

@@ -106,10 +106,11 @@ button:hover {
 
 .caption strong {
     color: #E44D26; /* Rojo fuerte para destacar comentarios especiales */
+    font: bold;
 }
 
 .caption em {
-    color: #555; /* Gris oscuro para comentarios de rangos */
-    font-style: italic;
+    color: #E44D26; /* Rojo fuerte para destacar comentarios especiales */
+    font: bold;
 }
 
