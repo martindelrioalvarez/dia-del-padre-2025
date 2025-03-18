@@ -44,15 +44,25 @@ function startSlideshow() {
 function showImage(index) {
     const imageElement = document.getElementById("image");
     const captionElement = document.getElementById("caption");
-    const nextButton = document.getElementById("nextButton"); // Referencia al botón "Siguiente"
+    const nextButton = document.getElementById("nextButton");
 
-    const comment = getComment(index + 1); // Ajustamos el índice (sumamos 1)
+    // Quitar la clase de animación antes de cambiar la imagen
+    imageElement.classList.remove("show");
+    captionElement.classList.remove("show");
+    nextButton.classList.remove("show");
 
-    imageElement.src = images[index];  
-    captionElement.innerHTML = `${captions[index]}<br>${comment}`; // Mostramos la descripción y el comentario
+    // Esperar un poco antes de cambiar la imagen (para que la animación fluya mejor)
+    setTimeout(() => {
+        const comment = getComment(index + 1); // Ajustamos el índice (sumamos 1)
 
-    // 🔹 Hacemos que el botón "Siguiente" se vea después de que la imagen se muestra
-    nextButton.style.display = "block";
+        imageElement.src = images[index];  
+        captionElement.innerHTML = `${captions[index]}<br>${comment}`;
+
+        // Agregar la clase para activar la animación después de cambiar la imagen
+        imageElement.classList.add("show");
+        captionElement.classList.add("show");
+        nextButton.classList.add("show");
+    }, 300); // Pequeña pausa para la animación de salida antes de la nueva imagen
 }
 
 function nextImage() {

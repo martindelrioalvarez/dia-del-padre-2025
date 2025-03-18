@@ -23,11 +23,21 @@ body {
     margin-top: 20px;
 }
 
+/* 🎬 Animación de aparición "fade-in" para las imágenes */
 img {
     max-width: 80%;
     max-height: 80vh;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* 🔥 Cuando se muestra una nueva imagen, aplicamos la animación */
+img.show {
+    opacity: 1;
+    transform: scale(1);
 }
 
 /* ✨ Nuevo estilo para el mensaje "Feliz Día del Padre" */
@@ -65,7 +75,14 @@ button:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.next-button.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .next-button:hover {
@@ -77,6 +94,14 @@ button:hover {
     font-weight: bold;
     margin-top: 10px;
     color: #333;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.caption.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .caption strong {
