@@ -3,16 +3,24 @@ body {
     text-align: center;
     background-color: #f0f0f0;
     margin: 0;
-    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
-    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .image-container {
     display: none;
-    margin-top: 30px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 
 img {
@@ -23,8 +31,9 @@ img {
 }
 
 button {
-    font-size: 24px;
-    padding: 10px 20px;
+    font-size: 20px;
+    padding: 12px 24px;
+    margin-top: 20px;
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -35,12 +44,6 @@ button {
 
 button:hover {
     background-color: #45a049;
-}
-
-.message {
-    font-size: 32px;
-    font-weight: bold;
-    color: #4CAF50;
 }
 
 .next-button {
@@ -56,4 +59,11 @@ button:hover {
 
 .next-button:hover {
     background-color: #0056b3;
+}
+
+.caption {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
 }

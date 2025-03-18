@@ -1,31 +1,38 @@
 const images = [
-    "img/img1.jpeg", // Asegúrate de que las imágenes estén en la carpeta "img"
+    "img/img1.jpeg",
     "img/img2.jpeg",
-    "img/img3.jpeg",
-    "img/img4.jpeg"
+    "img/img3.jpeg"
 ];
+
+const captions = [
+    "Gracias por siempre estar a mi lado. ❤️",
+    "Tus enseñanzas son mi mayor tesoro. 👨‍👦",
+    "Eres el mejor padre del mundo. 🌍✨"
+];
+
 let currentImageIndex = 0;
 
 document.getElementById("startButton").addEventListener("click", startSlideshow);
 document.getElementById("nextButton").addEventListener("click", nextImage);
 
 function startSlideshow() {
-    document.querySelector(".message").style.display = "none"; // Ocultamos el mensaje inicial
-    document.getElementById("startButton").style.display = "none";  // Ocultamos el botón de inicio
-    document.getElementById("imageContainer").style.display = "block"; // Mostramos el contenedor de imágenes
+    document.querySelector(".message").style.display = "none";  // Oculta el mensaje inicial
+    document.getElementById("startButton").style.display = "none";  // Oculta el botón de inicio
+    document.getElementById("imageContainer").style.display = "flex"; // Muestra la imagen
     showImage(currentImageIndex);
 }
 
 function showImage(index) {
     const imageElement = document.getElementById("image");
-    imageElement.src = images[index];
-    document.getElementById("nextButton").style.display = "block"; // Mostramos el botón de siguiente
+    const captionElement = document.getElementById("caption");
+
+    imageElement.src = images[index];  // Cambia la imagen
+    captionElement.textContent = captions[index];  // Cambia el texto debajo de la imagen
+
+    document.getElementById("nextButton").style.display = "block";  // Muestra el botón "Siguiente"
 }
 
 function nextImage() {
-    currentImageIndex++;
-    if (currentImageIndex >= images.length) {
-        currentImageIndex = 0; // Si llegamos al final de las imágenes, volvemos a la primera
-    }
+    currentImageIndex = (currentImageIndex + 1) % images.length; // Reinicia cuando llega al final
     showImage(currentImageIndex);
 }
